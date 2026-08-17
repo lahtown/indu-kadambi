@@ -38,4 +38,30 @@ document.addEventListener('DOMContentLoaded', () => {
       heroBg.style.transform = `translateY(${scroll * 0.4}px)`;
     }
   });
+  // Accordion interactivity
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const content = item.querySelector('.accordion-content');
+      
+      // Close all other items (optional, keeps UI clean)
+      document.querySelectorAll('.accordion-item').forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          const otherContent = otherItem.querySelector('.accordion-content');
+          if (otherContent) otherContent.style.maxHeight = null;
+        }
+      });
+      
+      // Toggle current item
+      if (item.classList.contains('active')) {
+        item.classList.remove('active');
+        content.style.maxHeight = null;
+      } else {
+        item.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 30 + "px"; // Adding extra space for padding
+      }
+    });
+  });
 });
