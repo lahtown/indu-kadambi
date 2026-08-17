@@ -64,4 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  
+  // Contact Form
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const message = document.getElementById('contact-message').value;
+      
+      const subject = encodeURIComponent(`Message from ${name} via Campaign Website`);
+      const body = encodeURIComponent(message);
+      
+      window.location.href = `mailto:elect.indu@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
 });
