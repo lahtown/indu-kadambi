@@ -65,18 +65,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+  // Bot-safe email construction (prevents simple scraping)
+  const user = 'elect.indu';
+  const domain = 'gmail.com';
+  const emailTarget = user + '@' + domain;
+
+  // Footer Contact Link
+  const footerLink = document.getElementById('footer-contact-link');
+  if (footerLink) {
+    footerLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = `mailto:${emailTarget}`;
+    });
+  }
+
   // Contact Form
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      
+      // Bot honeypot check
+      const honeypot = document.getElementById('contact-website');
+      if (honeypot && honeypot.value !== "") {
+        // Silent failure for bots
+        return;
+      }
+      
       const name = document.getElementById('contact-name').value;
       const message = document.getElementById('contact-message').value;
       
       const subject = encodeURIComponent(`Message from ${name} via Campaign Website`);
       const body = encodeURIComponent(message);
       
-      window.location.href = `mailto:elect.indu@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:${emailTarget}?subject=${subject}&body=${body}`;
     });
   }
 });

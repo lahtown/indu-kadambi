@@ -321,6 +321,10 @@
       <h2 class="serif">Get in Touch</h2>
       <p class="narrow-text">Have a question or want to share your thoughts on the future of Los Altos Hills? Send a message directly to Indu.</p>
       <form id="contact-form" class="contact-form">
+        <!-- Bot protection honeypot -->
+        <div style="display:none;" aria-hidden="true">
+          <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
         <input type="text" id="contact-name" placeholder="Your Name" required />
         <input type="email" id="contact-email" placeholder="Your Email" required />
         <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
@@ -337,7 +341,7 @@
       </div>
       <div class="footer-cta">
         <p>Join the Campaign</p>
-        <a href="mailto:elect.indu@gmail.com" class="btn">Get in Touch</a>
+        <a href="#" id="footer-contact-link" class="btn">Get in Touch</a>
       </div>
     </div>
     <div class="footer-bottom">
