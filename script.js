@@ -79,26 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact Form
+  // Contact Form Setup (FormSubmit Backend)
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Bot honeypot check
-      const honeypot = document.getElementById('contact-website');
-      if (honeypot && honeypot.value !== "") {
-        // Silent failure for bots
-        return;
-      }
-      
-      const name = document.getElementById('contact-name').value;
-      const message = document.getElementById('contact-message').value;
-      
-      const subject = encodeURIComponent(`Message from ${name} via Campaign Website`);
-      const body = encodeURIComponent(message);
-      
-      window.location.href = `mailto:${emailTarget}?subject=${subject}&body=${body}`;
-    });
+    // Dynamically set action to avoid simple HTML scraping
+    contactForm.setAttribute('action', `https://formsubmit.co/${emailTarget}`);
   }
 });

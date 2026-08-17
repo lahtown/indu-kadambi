@@ -323,14 +323,20 @@
     <div class="content fade-up">
       <h2 class="serif">Get in Touch</h2>
       <p class="narrow-text">Have a question or want to share your thoughts on the future of Los Altos Hills? Send a message directly to Indu.</p>
-      <form id="contact-form" class="contact-form">
+      <form id="contact-form" class="contact-form" method="POST">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New message from Campaign Website!">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://lahtown.github.io/indu-kadambi/">
+        
         <!-- Bot protection honeypot -->
         <div style="display:none;" aria-hidden="true">
-          <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
         </div>
-        <input type="text" id="contact-name" placeholder="Your Name" required />
-        <input type="email" id="contact-email" placeholder="Your Email" required />
-        <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+        
+        <input type="text" id="contact-name" name="name" placeholder="Your Name" required />
+        <input type="email" id="contact-email" name="email" placeholder="Your Email" required />
+        <textarea id="contact-message" name="message" placeholder="Your Message" rows="5" required></textarea>
         <button type="submit" class="btn" style="margin-top: 0.5rem;">Send Message</button>
       </form>
     </div>
