@@ -586,45 +586,347 @@ blockquote {
   font-size: 1rem;
 }
 
-/* Endorsements / Voices from Our Town */
-.endorsements-masonry {
-  columns: 2 460px;
-  column-gap: 2.5rem;
+/* Sleek Hero Endorsement Pill */
+.hero-endorsement-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: rgba(18, 38, 29, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(242, 201, 76, 0.45);
+  border-radius: 40px;
+  padding: 0.65rem 1.45rem;
+  margin-top: 1.75rem;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.28);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.hero-endorsement-pill:hover {
+  background: rgba(22, 48, 36, 0.94);
+  border-color: #F2C94C;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.hero-endorsement-pill .pill-star {
+  color: #F2C94C;
+  font-size: 0.9rem;
+}
+
+.hero-endorsement-pill .pill-arrow {
+  color: #F2C94C;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.hero-endorsement-pill:hover .pill-arrow {
+  transform: translateX(4px);
+}
+
+/* Floating Endorsement Pop-up (Bottom-Right Corner) */
+.floating-endorsement-popup {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: min(380px, calc(100vw - 36px));
+  background: rgba(21, 56, 45, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(242, 201, 76, 0.45);
+  border-top: 4px solid #E2AB27;
+  border-radius: 14px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
+  padding: 18px 20px 16px 20px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  animation: slideInPopup 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+}
+
+@keyframes slideInPopup {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.floating-endorsement-popup:hover {
+  transform: translateY(-3px);
+  border-color: rgba(242, 201, 76, 0.8);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.popup-close-btn:hover {
+  color: #FFFFFF;
+  transform: scale(1.15);
+}
+
+.popup-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.popup-header {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #E2AB27;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.popup-star {
+  font-size: 0.8rem;
+}
+
+.popup-quote-wrap {
+  min-height: 58px;
+  margin-bottom: 10px;
+}
+
+.popup-quote-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.42;
+  color: #FFFFFF;
+  margin: 0;
+  transition: opacity 0.35s ease;
+}
+
+.popup-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.popup-author strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #F2C04D;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.popup-author span {
+  display: block;
+  font-size: 0.72rem;
+  color: #DCE9E2;
+  margin-top: 2px;
+  line-height: 1.25;
+}
+
+.popup-cta {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #E2AB27;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid rgba(226, 171, 39, 0.5);
+  padding-bottom: 1px;
+  transition: gap 0.2s ease;
+}
+
+.popup-link:hover .popup-cta {
+  gap: 8px;
+  border-bottom-color: #F2C94C;
+}
+
+@media (max-width: 600px) {
+  .floating-endorsement-popup {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    padding: 14px 16px 12px;
+  }
+}
+
+/* Endorsements / Voices from Our Town (Inspired by indukadambi.org) */
+.endorsements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 30px;
   max-width: var(--container-width);
   margin: 0 auto;
 }
 
 .endorsement-card {
-  break-inside: avoid;
-  margin-bottom: 2.5rem;
-  background-color: var(--color-card);
-  border-radius: 8px;
-  padding: 2.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 30px 34px 26px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(23, 56, 46, 0.08);
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .endorsement-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 14px 32px rgba(23, 56, 46, 0.13);
 }
 
-.endorsement-card .quote-mark {
-  font-family: var(--font-serif);
-  font-size: 3.5rem;
-  line-height: 1;
-  color: var(--color-accent);
-  opacity: 0.35;
-  margin-bottom: -0.5rem;
+/* Distinct Card Palettes */
+.endorsement-former-mayor {
+  background: #2C5A49 !important;
+  color: #FFFFFF !important;
+  border-top: 6px solid #E2AB27 !important;
+}
+
+.endorsement-former-mayor p,
+.endorsement-former-mayor .salutation,
+.endorsement-former-mayor .signoff {
+  color: #FFFFFF !important;
+}
+
+.endorsement-former-mayor footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
+}
+
+.endorsement-former-mayor footer strong {
+  color: #F2C04D !important;
+}
+
+.endorsement-former-mayor footer span {
+  color: #DCE9E2 !important;
+}
+
+.endorsement-former-mayor .quote-mark {
+  color: #E2AB27 !important;
+}
+
+.card-sage {
+  background: #E8EFE9 !important;
+  color: #17382E !important;
+  border-top: 6px solid #2C5A49 !important;
+}
+
+.card-sage footer {
+  border-top: 1px solid rgba(44, 90, 73, 0.18) !important;
+}
+
+.card-sage footer strong {
+  color: #2C5A49 !important;
+}
+
+.card-sage footer span {
+  color: #556C62 !important;
+}
+
+.card-sage .quote-mark {
+  color: #B98614 !important;
+}
+
+.card-parchment {
+  background: #FBF5E6 !important;
+  color: #17382E !important;
+  border-top: 6px solid #DCA71C !important;
+}
+
+.card-parchment footer {
+  border-top: 1px solid rgba(44, 90, 73, 0.18) !important;
+}
+
+.card-parchment footer strong {
+  color: #2C5A49 !important;
+}
+
+.card-parchment footer span {
+  color: #556C62 !important;
+}
+
+.card-parchment .quote-mark {
+  color: #DCA71C !important;
+}
+
+.card-ivory {
+  background: #FFFDF8 !important;
+  color: #17382E !important;
+  border-top: 6px solid #DCA71C !important;
+}
+
+.card-ivory footer {
+  border-top: 1px solid rgba(44, 90, 73, 0.18) !important;
+}
+
+.card-ivory footer strong {
+  color: #2C5A49 !important;
+}
+
+.card-ivory footer span {
+  color: #556C62 !important;
+}
+
+.card-ivory .quote-mark {
+  color: #DCA71C !important;
+}
+
+/* Quote marks */
+.quote-mark {
+  font-family: Georgia, serif;
+  font-size: 46px;
+  line-height: 0.8;
+  font-weight: 700;
+  color: #DCA71C;
+}
+
+.quote-open {
+  margin-bottom: 12px;
+}
+
+.quote-close {
+  text-align: right;
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 
 .endorsement-body p {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: var(--color-text);
-  margin-bottom: 1rem;
+  font-size: 1.02rem;
+  line-height: 1.62;
+  margin-bottom: 14px;
 }
 
 .endorsement-body p:last-child {
@@ -634,43 +936,53 @@ blockquote {
 .endorsement-body .salutation {
   font-style: italic;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 .endorsement-body .signoff {
   font-style: italic;
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 
-.endorsement-author {
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+.endorsement-card footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(44, 90, 73, 0.18);
 }
 
-.author-name {
+.endorsement-card footer strong {
+  display: block;
   font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-dark);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 4px;
+  color: #2C5A49;
 }
 
-.author-title {
-  font-size: 0.85rem;
-  color: var(--color-accent);
+.endorsement-card footer span {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: #556C62;
   font-weight: 500;
-  margin-top: 0.25rem;
-  letter-spacing: 0.2px;
-  line-height: 1.4;
 }
 
 @media (max-width: 900px) {
-  .endorsements-masonry {
-    columns: 1;
+  .hero-endorsement-banner {
+    padding: 1.15rem 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .banner-quote {
+    font-size: 0.95rem;
+  }
+  .endorsements-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
   .endorsement-card {
-    padding: 1.75rem 1.5rem;
-    margin-bottom: 1.75rem;
+    padding: 24px 22px 20px;
   }
 }
+
 
