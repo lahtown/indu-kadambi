@@ -143,4 +143,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 350);
     }, 6500);
   }
+
+  // Lightbox modal for Our Town article zoom
+  const openNewsletterBtn = document.getElementById('open-newsletter-btn');
+  const newsletterModal = document.getElementById('newsletter-modal');
+  const closeNewsletterModal = document.getElementById('close-newsletter-modal');
+  const modalBackdrop = document.getElementById('modal-backdrop');
+
+  if (openNewsletterBtn && newsletterModal) {
+    const openModal = () => {
+      newsletterModal.classList.add('open');
+      newsletterModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      newsletterModal.classList.remove('open');
+      newsletterModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    openNewsletterBtn.addEventListener('click', openModal);
+    openNewsletterBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal();
+      }
+    });
+
+    if (closeNewsletterModal) {
+      closeNewsletterModal.addEventListener('click', closeModal);
+    }
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener('click', closeModal);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && newsletterModal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  }
 });
