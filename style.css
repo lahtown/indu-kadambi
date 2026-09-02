@@ -604,10 +604,15 @@ blockquote {
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(242, 201, 76, 0.15) !important;
   padding: 16px 20px 15px 20px !important;
   color: #FFFFFF !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease !important;
-  display: block !important;
-  visibility: visible !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
   animation: slideInPopup 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.floating-endorsement-popup.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 .floating-endorsement-popup a,

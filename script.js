@@ -94,16 +94,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupAuthorTitle = document.getElementById('popup-author-title');
 
   if (floatingPopup && closePopupBtn && popupQuoteText && popupAuthorName && popupAuthorTitle) {
-    // Dismiss button
-    closePopupBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
+    let rotatorInterval = null;
+
+    // Dismiss popup
+    const dismissPopup = (e) => {
+      if (e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      if (rotatorInterval) {
+        clearInterval(rotatorInterval);
+      }
+      floatingPopup.classList.add('is-hidden');
+      floatingPopup.style.setProperty('display', 'none', 'important');
       floatingPopup.style.opacity = '0';
-      floatingPopup.style.transform = 'translateY(20px) scale(0.95)';
-      setTimeout(() => {
-        floatingPopup.style.display = 'none';
-      }, 300);
-    });
+      floatingPopup.style.visibility = 'hidden';
+      floatingPopup.style.pointerEvents = 'none';
+    };
+
+    closePopupBtn.addEventListener('click', dismissPopup);
+    closePopupBtn.addEventListener('touchend', dismissPopup);
 
     // Curated quotes rotation
     const featuredEndorsements = [
@@ -130,8 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let currentIdx = 0;
-    setInterval(() => {
-      if (floatingPopup.style.display === 'none') return;
+    rotatorInterval = setInterval(() => {
+      if (floatingPopup.classList.contains('is-hidden') || floatingPopup.style.display === 'none') {
+        if (rotatorInterval) clearInterval(rotatorInterval);
+        return;
+      }
       currentIdx = (currentIdx + 1) % featuredEndorsements.length;
       
       popupQuoteText.style.opacity = '0';
