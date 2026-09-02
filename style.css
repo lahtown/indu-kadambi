@@ -1387,6 +1387,14 @@ blockquote {
   box-shadow: 0 20px 45px rgba(226, 171, 39, 0.25);
 }
 
+.newsletter-preview-card.full-span-card {
+  grid-column: span 2;
+}
+
+.newsletter-preview-card.full-span-card .newsletter-img-wrap {
+  height: 220px;
+}
+
 .newsletter-img-wrap {
   position: relative;
   height: 280px;
@@ -1547,6 +1555,9 @@ blockquote {
   .family-roots-gallery {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  .newsletter-preview-card.full-span-card {
+    grid-column: span 1;
   }
   .family-img,
   .newsletter-img-wrap {
