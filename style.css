@@ -240,6 +240,29 @@ p {
   margin-bottom: 2.5rem;
 }
 
+/* About Section Roles */
+.about-roles-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+  margin: 1.25rem 0 1.75rem 0;
+}
+
+.about-role-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background-color: rgba(58, 75, 64, 0.08);
+  border: 1px solid rgba(58, 75, 64, 0.2);
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+}
+
+
 /* Split Layouts */
 .split {
   display: grid;
