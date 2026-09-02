@@ -562,3 +562,92 @@ blockquote {
   padding: 1rem 2.5rem;
   font-size: 1rem;
 }
+
+/* Endorsements / Voices from Our Town */
+.endorsements-masonry {
+  columns: 2 460px;
+  column-gap: 2.5rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.endorsement-card {
+  break-inside: avoid;
+  margin-bottom: 2.5rem;
+  background-color: var(--color-card);
+  border-radius: 8px;
+  padding: 2.25rem 2.5rem;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.endorsement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.endorsement-card .quote-mark {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-accent);
+  opacity: 0.35;
+  margin-bottom: -0.5rem;
+}
+
+.endorsement-body p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.endorsement-body p:last-child {
+  margin-bottom: 0;
+}
+
+.endorsement-body .salutation {
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.endorsement-body .signoff {
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.endorsement-author {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.author-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.author-title {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-top: 0.25rem;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .endorsements-masonry {
+    columns: 1;
+  }
+  .endorsement-card {
+    padding: 1.75rem 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
