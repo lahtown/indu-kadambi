@@ -30,14 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Simple Parallax for Hero
-  const heroBg = document.querySelector('.hero-bg');
-  window.addEventListener('scroll', () => {
-    const scroll = window.scrollY;
-    if (scroll < window.innerHeight) {
-      heroBg.style.transform = `translateY(${scroll * 0.4}px)`;
-    }
-  });
+  // Simple Parallax for Banner
+  const bannerBg = document.querySelector('.banner-bg, .hero-bg');
+  if (bannerBg) {
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      if (scroll < window.innerHeight) {
+        bannerBg.style.transform = `translateY(${scroll * 0.35}px)`;
+      }
+    });
+  }
   // Accordion interactivity
   const accordionHeaders = document.querySelectorAll('.accordion-header');
   accordionHeaders.forEach(header => {
