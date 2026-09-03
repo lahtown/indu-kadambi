@@ -270,45 +270,57 @@ p {
 }
 
 .btn-banner-primary {
-  background: var(--color-gold);
-  color: var(--color-dark);
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  padding: 0.88rem 2.35rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  font-size: 0.82rem;
-  box-shadow: 0 4px 18px rgba(226, 171, 39, 0.35);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #E2AB27 !important;
+  color: #10261F !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  padding: 0.9rem 2.4rem !important;
+  border-radius: 9999px !important;
+  text-transform: uppercase !important;
+  font-size: 0.82rem !important;
+  border: 1px solid #E2AB27 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(226, 171, 39, 0.4) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
 }
 
 .btn-banner-primary:hover {
-  background: var(--color-gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(226, 171, 39, 0.45);
+  background: #F4D068 !important;
+  border-color: #F4D068 !important;
+  color: #10261F !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(226, 171, 39, 0.5) !important;
 }
 
 .btn-banner-secondary {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  padding: 0.88rem 2.35rem;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  font-size: 0.82rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #FFFFFF !important;
+  color: #10261F !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  padding: 0.9rem 2.4rem !important;
+  border-radius: 9999px !important;
+  text-transform: uppercase !important;
+  font-size: 0.82rem !important;
+  border: 1px solid #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
 }
 
 .btn-banner-secondary:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
+  background: #F5F5F0 !important;
+  border-color: #F5F5F0 !important;
+  color: #10261F !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
 }
 
 .endorsements-bridge-banner {
