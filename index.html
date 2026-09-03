@@ -61,16 +61,16 @@
         <p class="subtitle" style="color: var(--color-accent); font-weight: 500; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.5rem;">About Indu</p>
         <h2 class="serif" style="margin-bottom: 0.75rem;">More Than a Business Owner</h2>
         
-        <div class="about-roles-bar">
-          <span>FIRE COMMISSIONER</span>
-          <span class="role-separator">|</span>
-          <span>EDUCATOR</span>
-          <span class="role-separator">|</span>
-          <span>TREASURER</span>
-          <span class="role-separator">|</span>
-          <span>COMMUNITY ORGANIZER</span>
-          <span class="role-separator">|</span>
-          <span>PUBLISHED AUTHOR</span>
+        <div class="about-roles-container">
+          <span class="role-badge">FIRE COMMISSIONER</span>
+          <span class="role-divider">|</span>
+          <span class="role-badge">EDUCATOR</span>
+          <span class="role-divider">|</span>
+          <span class="role-badge">TREASURER</span>
+          <span class="role-divider">|</span>
+          <span class="role-badge">COMMUNITY ORGANIZER</span>
+          <span class="role-divider">|</span>
+          <span class="role-badge">PUBLISHED AUTHOR</span>
         </div>
 
         <p class="large-text">The “Business Owner” title next to my name on the ballot is only one piece of the quilt of my life.</p>
@@ -88,31 +88,52 @@
 
     <!-- Family & Roots Subsection -->
     <div class="family-roots-subsection fade-up">
-      <div class="family-roots-grid">
-        <div class="family-roots-copy">
-          <p class="subtitle" style="color: var(--color-accent); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.5rem;">BACKGROUND</p>
+      <!-- Top Section: Copy & Quote -->
+      <div class="family-roots-header">
+        <div class="family-roots-header-left">
+          <p class="subtitle" style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.82rem; margin-bottom: 0.4rem;">BACKGROUND &amp; HERITAGE</p>
           <h3 class="serif family-roots-title">Family &amp; Roots</h3>
           <blockquote class="family-roots-quote">
             <p>“Service, I have learned, is a value best taught by living it.”</p>
             <cite class="quote-attribution">— Indu Kadambi</cite>
           </blockquote>
+        </div>
+        <div class="family-roots-header-right">
           <p class="family-roots-desc">The pandemic was a strange, disconnected time, but it is a powerful reminder how quickly a community can form around a shared need. Stepping up did not just ease someone's burden, it gave my family an anchor and a shared purpose when everything else felt untethered. Human resilience shows up most clearly in acts where giving and receiving blur together into the same thing.</p>
         </div>
+      </div>
 
-        <div class="about-gallery-two">
-          <figure class="about-family-full">
-            <img src="assets/indu-family-portrait.jpg" alt="Indu Kadambi and her family" />
-          </figure>
-          
-          <button aria-label="Open Our Town newsletter article" class="newsletter about-newsletter-full" id="open-newsletter-btn" title="Click to zoom and read article" type="button" onclick="document.getElementById('newsletter-modal').classList.add('open'); document.body.style.overflow='hidden';">
-            <img src="assets/our-town-article.jpg" alt="Our Town March 2021 article: A Family's Response to the Pandemic" />
-            <span class="zoom-badge">🔍 Click to zoom</span>
-          </button>
+      <!-- Horizontal 3-Card Photo Gallery -->
+      <div class="family-roots-horizontal-gallery">
+        <!-- Photo 1: Family Portrait -->
+        <figure class="roots-card">
+          <div class="roots-card-img-wrap">
+            <img src="assets/indu-family-portrait.jpg" alt="Indu Kadambi and her family" class="roots-card-img" />
+          </div>
+          <figcaption class="roots-card-caption">The Kadambi Family</figcaption>
+        </figure>
 
-          <figure class="about-kili-full">
-            <img src="assets/indu-kilimanjaro.jpeg" alt="Indu Kadambi at Mt. Kilimanjaro" />
-            <figcaption>Guide Derek and Indu</figcaption>
-          </figure>
+        <!-- Photo 2: Mt. Kilimanjaro -->
+        <figure class="roots-card">
+          <div class="roots-card-img-wrap">
+            <img src="assets/indu-kilimanjaro.jpeg" alt="Indu Kadambi at Mt. Kilimanjaro" class="roots-card-img" />
+          </div>
+          <figcaption class="roots-card-caption">Guide Derek &amp; Indu • Mt. Kilimanjaro</figcaption>
+        </figure>
+
+        <!-- Photo 3: Pandemic Article / Bottle Photo (Click to Zoom) -->
+        <div class="roots-card roots-card-interactive" id="open-newsletter-btn" role="button" tabindex="0" title="Click to zoom in and read full article" onclick="document.getElementById('newsletter-modal').classList.add('open'); document.body.style.overflow='hidden';">
+          <div class="roots-card-img-wrap newsletter-wrap">
+            <img src="assets/our-town-article.jpg" alt="Our Town March 2021 article: A Family's Response to the Pandemic" class="roots-card-img contain-article-img" />
+            <div class="roots-card-zoom-badge">
+              <span class="zoom-icon">🔍</span>
+              <span>Click to Zoom</span>
+            </div>
+          </div>
+          <div class="roots-card-caption interactive-caption">
+            <span>Our Town (March 2021)</span>
+            <span class="read-prompt">Read Story →</span>
+          </div>
         </div>
       </div>
     </div>
