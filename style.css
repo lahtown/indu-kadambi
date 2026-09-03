@@ -241,25 +241,29 @@ p {
 }
 
 /* About Section Roles */
-.about-roles-badges {
+.about-roles-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 0.6rem;
-  margin: 1.25rem 0 1.75rem 0;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 1.15rem 0 1.75rem 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: var(--color-dark);
+  text-transform: uppercase;
 }
 
-.about-role-pill {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
+.about-roles-bar span:not(.role-separator) {
+  color: var(--color-dark);
+  letter-spacing: 1.4px;
+}
+
+.about-roles-bar .role-separator {
   color: var(--color-accent);
-  background-color: rgba(58, 75, 64, 0.08);
-  border: 1px solid rgba(58, 75, 64, 0.2);
-  padding: 0.4rem 0.85rem;
-  border-radius: 20px;
+  font-weight: 300;
+  opacity: 0.85;
+  user-select: none;
 }
 
 
