@@ -1569,12 +1569,46 @@ blockquote {
 
 @media (max-width: 768px) {
   .family-roots-horizontal-gallery {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    padding: 6px 1.25rem 16px 1.25rem;
+    margin: 0 -1.25rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(44, 90, 73, 0.2) transparent;
   }
+
+  .family-roots-horizontal-gallery::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .family-roots-horizontal-gallery::-webkit-scrollbar-thumb {
+    background: rgba(44, 90, 73, 0.2);
+    border-radius: 4px;
+  }
+
+  .roots-card {
+    flex: 0 0 220px;
+    max-width: 220px;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
   .roots-card-img-wrap {
-    height: 200px;
+    height: 150px;
   }
+
+  .roots-card-caption {
+    padding: 7px 10px;
+    font-size: 0.72rem;
+  }
+
+  .interactive-caption {
+    font-size: 0.7rem;
+  }
+
   .about-roles-plaque {
     padding: 8px 12px;
     gap: 6px;
